@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<button class="tablink" onclick="openLink('Reports', this)">Отчеты</button>
+<button class="tablink" onclick="openLink('Checklists', this)">Чек-листы</button>
+<button class="tablink" onclick="openLink('WIP', this)">В работе</button>
+<button class="tablink" onclick="openLink('WIP', this)">В работе</button>
+<button class="tablink" onclick="openLink('WIP', this)">В работе</button>
+
+<div id="Reports" class="tabcontent">
+  <div class="dropdown">
+    <button id="dropbtnReports" class="dropbtn">Выберите тип отчета</button>
+    <div class="dropdown-content">
+      <button onclick="openReportType('CasefileFP', this)" >Первая страница кейсфайла</button>
+      <button onclick="openReportType('CasefileUpdate', this)">Дополнительная информация</button>
+    </div>
+  </div>
+
+  <div id="CasefileFP" class="reportType" text>
+    <h3>Предварительная информация по делу</h3>
+    <form>
+    Дата и время дела(для генерации номера): <input type="datetime-local" id="datetime"><br>
+    Обвинения: <input id="charges" size="40" placeholder="Перечень статей по Penal Code"><br>
+    
+    Статус <br>
+
+    <input type="radio" id="investigating" name="status" value="investigating">
+    <label for="investigating">Расследуется</label><br>
+    <input type="radio" id="sentToCourt" name="status" value="sendToCourt">
+    <label for="sentToCourt">Завершено (передано в суд)</label><br>
+    <input type="radio" id="closedOther" name="status" value="closedOther">
+    <label for="closedOther">Завершено (иное)</label><br>
+
+    Cписок следователей:
+    <div id="detectives">
+    Звание: <input id="dtRank1"> Должность: <input id="dtPosition1"> Имя фамилия: <input id="dtNameSurname1"> <br>
+    </div>
+    </form>
+    <p><button onclick="addDt()" >Добавить следователя</button> <button onclick="removeDt()" >Удалить следователя</button></p>
+    Точный адрес места инцидента: <input id="adress"><br>
+
+    <h3>Основная информация</h3>
+    Описание происшествия:
+    
+    <br><textarea id="incidentDescription" rows="10" cols="100">
+      Содержание
+    </textarea> <br>
+
+    Cвидетили: <br>
+
+    <div id = "witnesses"></div>
+
+    <p><button onclick="addWitness()" >Добавить свидетеля</button> <button onclick="removeWitness()" >Удалить cвидетеля</button></p>
+    
+    Описание сцены преступления:
+
+    <br><textarea id="sceneDescription" rows="10" cols="100">
+      Содержание
+    </textarea> <br>
+
+    Перечень улик: <br>
+
+    <div id = "evidences"></div>
+
+    <p><button onclick="addEvidence()" >Добавить улику</button> <button onclick="removeEvidence()" >Удалить улику</button></p>
+
+    Фотографии с места инцидента: <input id="photos" placeholder = "Cсылка на imgur"><br>
+
+    <h3>Лица, вовлеченные в инцидент: потерпевшие, подозреваемые, информаторы</h3>
+
+    <div id = "participants"></div>
+    <p><button onclick="addParticipant()" >Добавить</button> <button onclick="removeParticipant()" >Удалить</button></p>
+
+    <p><button onclick="createReport()" >Cгенирировать отчет</button>  <button onclick="copyReport()">Cкопировать отчет</button>
+    </p>
+
+    <br><textarea id="generatedReport" rows="40" cols="100">
+      Отчет появится тут.
+    </textarea> <br>
+
+  </div>
+
+  <div id="CasefileUpdate" class="reportType">
+    <p>Ультра в работе</p> 
+  </div>
+
+</div>
+
+<div id="Checklists" class="tabcontent">
+  <h1>В работе</h1>
+  <p>Ультра в работе</p> 
+</div>
+
+<div id="WIP" class="tabcontent">
+  <h1>В работе</h1>
+  <p>Ультра в работе</p> 
+</div>
+
+
+<script src="scripts.js"></script>
+   
+</body>
+</html> 
