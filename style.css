@@ -11,7 +11,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-body{
+.indexDiv{
     background-color: var(--main-bg-color);
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -141,3 +141,78 @@ h1, h2, h3{
 .historyElement{
     padding: 0.5rem;
 }
+
+a{
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+a:visited{
+    color: black;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.flexCollumnCenter{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center ;
+    gap: 1rem;
+}
+
+#graphInput{
+    width: 22rem;
+    height: 2rem;
+    font-size: large;
+    border-style: none;
+    border-bottom-style: solid;
+}
+#graphInput:focus{
+    border-style: none;
+    border-bottom-style: solid; 
+}
+#formulaInputDiv{
+    font-size: large;
+    display: flex;
+    gap: 1rem;
+    font-weight: 900;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.mainDivGraphCalc{
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: 
+    "leftPart rightPart";
+    margin: 0;
+    height: 100vh;
+}
+
+.bottomPart{
+    grid-area: bottomPart;
+    border-top-style: solid;
+    border-color: #AFAFAF;
+    border-width: 3px;
+}
+
+#formulasDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-family: sans-serif;
+    font-size: large;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.grafHistoryDiv{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+

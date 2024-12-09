@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphing Owl Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/expr-eval@2.0.2/dist/bundle.min.js"></script>
+</head>
+<body onload="javascript:graphCalcLoaded()">
+    <div class="mainDivGraphCalc">
+        <div class="leftPart">
+            <div class="flexCollumnCenter">
+                <a id="menuButton" href="index.html">☰</a>
+                <h2 id="calcType">Graphing</h2>
+            </div>
+            <div id="formulasDiv">
+                <div id="formulaInputDiv"><span>y = </span><input type="text" id="graphInput" maxlength="39" autocomplete="off" autofocus></div>
+            </div>
+        </div>
+        <div class="rightPart">
+            <canvas id="graphCanvas"></canvas>
+        </div>
+    </div>
+</body>
+</html>

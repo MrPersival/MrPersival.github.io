@@ -8,67 +8,70 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    <div class="upperPart">
-        <div class="menuAndCalcType">
-            <button id="menuButton" type="button">☰</button>
-            <h2 id="calcType">Standart</h2>
+    <div class="indexDiv">
+        <div class="upperPart">
+            <div class="menuAndCalcType">
+                <a id="menuButton" href="graphingCalc.html">☰</a>
+                <h2 id="calcType">Standart</h2>
+            </div>
+            <div class="calculatorScreenPart">
+                <span id="numberAndOperationInWork"></span>
+                <input type="text" pattern="[0-9.]*"
+                oninput="this.value = this.value.replace(/[^0-9.π]/g, '').replace(/(\..*)\.π/g, '$1')"
+                id="mainNumber" maxlength="29" autofocus autocomplete="off">
+            </div>
         </div>
-        <div class="calculatorScreenPart">
-            <span id="numberAndOperationInWork"></span>
-            <input type="text" pattern="[0-9.]*"
-            oninput="this.value = this.value.replace(/[^0-9.π]/g, '').replace(/(\..*)\.π/g, '$1')"
-            id="mainNumber" maxlength="29" autofocus>
+        <div class="leftPart">
+            <h3 class="historyHeader">History</h3>
+            <div id="operationsHistory">
+            </div>
         </div>
-    </div>
-    <div class="leftPart">
-        <h3 class="historyHeader">History</h3>
-        <div id="operationsHistory">
-        </div>
-    </div>
-    <div class="rightPart">
-        <div class="buttonsHolder">
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('exponent')">^</button>
-                <button type="button" class="calcButton" onclick="action('procent')">%</button>
-                <button type="button" class="calcButton" onclick="action('CE')">CE</button>
-                <button type="button" class="calcButton" onclick="action('C')">C</button>
-                <button type="button" class="calcButton" onclick="action('delete')">⌫</button>
-            </div> 
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('root')">√()</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(7)">7</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(8)">8</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(9)">9</button>
-                <button type="button" class="calcButton" onclick="action('divide')">/</button>
+        <div class="rightPart">
+            <div class="buttonsHolder">
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('exponent')">^</button>
+                    <button type="button" class="calcButton" onclick="action('procent')">%</button>
+                    <button type="button" class="calcButton" onclick="action('CE')">CE</button>
+                    <button type="button" class="calcButton" onclick="action('C')">C</button>
+                    <button type="button" class="calcButton" onclick="action('delete')">⌫</button>
+                </div> 
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('root')">√()</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(7)">7</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(8)">8</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(9)">9</button>
+                    <button type="button" class="calcButton" onclick="action('divide')">/</button>
+                </div>
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('log')">log()</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(4)">4</button>
+                    <button type="button" class="calcButton numberButton"onclick="enterNumber(5)">5</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(6)">6</button>
+                    <button type="button" class="calcButton" onclick="action('multiply')">x</button>
+                </div>
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('pi')">π</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(1)">1</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(2)">2</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(3)">3</button>
+                    <button type="button" class="calcButton" onclick="action('-')">-</button>
+                </div>
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('sin')">sin()</button>
+                    <button type="button" class="calcButton" onclick="action('.')">.</button>
+                    <button type="button" class="calcButton numberButton" onclick="enterNumber(0)">0</button>
+                    <button type="button" class="calcButton equationSign" onclick="equation()">=</button>
+                    <button type="button" class="calcButton" onclick="action('+')">+</button>
+                </div>
+                <div class="buttonsLine">
+                    <button type="button" class="calcButton" onclick="action('cos')">cos()</button>
+                    <button type="button" class="calcButton" onclick="action('tan')">tan()</button>
+                    <button type="button" class="calcButton" onclick="action('arcsin')">sin<sup>-1</sup>()</button>
+                    <button type="button" class="calcButton" onclick="action('arccos')">cos<sup>-1</sup>()</button>
+                    <button type="button" class="calcButton" onclick="action('arctan')">tg<sup>-1</sup>()</button>
+                </div>
             </div>
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('log')">log()</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(4)">4</button>
-                <button type="button" class="calcButton numberButton"onclick="enterNumber(5)">5</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(6)">6</button>
-                <button type="button" class="calcButton" onclick="action('multiply')">x</button>
-            </div>
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('pi')">π</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(1)">1</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(2)">2</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(3)">3</button>
-                <button type="button" class="calcButton" onclick="action('-')">-</button>
-            </div>
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('sin')">sin()</button>
-                <button type="button" class="calcButton" onclick="action('.')">.</button>
-                <button type="button" class="calcButton numberButton" onclick="enterNumber(0)">0</button>
-                <button type="button" class="calcButton equationSign" onclick="equation()">=</button>
-                <button type="button" class="calcButton" onclick="action('+')">+</button>
-            </div>
-            <div class="buttonsLine">
-                <button type="button" class="calcButton" onclick="action('cos')">cos()</button>
-                <button type="button" class="calcButton" onclick="action('tan')">tan()</button>
-                <button type="button" class="calcButton" onclick="action('arcsin')">sin<sup>-1</sup>()</button>
-                <button type="button" class="calcButton" onclick="action('arccos')">cos<sup>-1</sup>()</button>
-                <button type="button" class="calcButton" onclick="action('arctan')">tg<sup>-1</sup>()</button>
-            </div>
+
         </div>
     </div>
 </body>
